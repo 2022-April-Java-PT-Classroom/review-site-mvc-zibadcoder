@@ -48,6 +48,8 @@ public class ReviewControllerMvcTest {
     }
     @Test
     public void shouldBeOkForOneReviewInTheCourseTemplate() throws Exception {
+        Long reviewOneId = 1L;
+        when(reviewRepo.findOne(reviewOneId)).thenReturn(reviewOne);
         mockMvc.perform(get("/review?id=1")).andExpect(status().isOk())
                 .andExpect(view().name("review"));
 
@@ -62,6 +64,16 @@ public class ReviewControllerMvcTest {
 
 
     }
+    @Test
+    public void shouldNotBeFoundForRequestNotInModel() throws Exception {
+        Long reviewTwoId = 2L;
+        when(reviewRepo.findOne(reviewTwoId)).thenReturn(reviewOne);
+        mockMvc.perform(get("/review?id=3")).andExpect(status().isNotFound());
+
+
+
+    }
+
 
 
 }
