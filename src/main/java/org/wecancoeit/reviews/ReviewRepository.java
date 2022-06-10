@@ -13,11 +13,11 @@ public class ReviewRepository {
     Map<Long, Review> reviewsList = new HashMap<>();
     public ReviewRepository() {
       Review laptopReview = new Review(1L,"HP laptop","/laptop.jpg",
-              "Rating out of five","I love this laptop! 5 star");
+              "This is an HP laptop icore 7.","I love this laptop! 5 star");
       Review bookReview = new Review(2L,"Unlimited Memory","/book.jpg",
-              "Rating out of 5", "I loved it! 5 star");
+              "It is a book written by memory master, Kevin.", "I loved it! 5 star");
       Review erasablePen = new Review(3L,"Parkoo Erasable pen","/pen.jpg",
-              "It is very convenient pen. It allows you to erase what you have written!",
+              "It is pencil like pen. It allows you to erase what you have written!",
                       "Good for the money. 4 star");
 
       reviewsList.put(laptopReview.getId(),laptopReview);
